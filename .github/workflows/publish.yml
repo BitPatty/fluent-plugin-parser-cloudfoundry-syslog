@@ -1,0 +1,22 @@
+name: Publish Gem
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  publish:
+    if: github.repository_owner == 'bitpatty'
+    runs-on: ubuntu-latest
+    environment: rubygems
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v2
+    - name: Publish gem
+      uses: dawidd6/action-publish-gem@v1
+      with:
+        api_key: ${{ secrets.RUBYGEMS_API_KEY }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
