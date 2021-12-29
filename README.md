@@ -100,7 +100,7 @@ Create a logdrain and update your fluent configuration:
   keepalive_timeout 10s
 
   <parse>
-    @type cloudfoundry-syslog
+    @type cloudfoundry_syslog
 
     # Set this to true if access log messages should be parsed.
     # Defaults to false

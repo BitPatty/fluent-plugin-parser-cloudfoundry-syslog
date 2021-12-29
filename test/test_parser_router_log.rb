@@ -2,14 +2,14 @@ require "test-unit"
 require "fluent/test"
 require "fluent/test/helpers"
 require "fluent/test/driver/parser"
-require "fluent/plugin/parser_cf_syslog.rb"
+require "fluent/plugin/parser_cloudfoundry_syslog.rb"
 
 class GorouterParserLog < Test::Unit::TestCase
   include Fluent::Test::Helpers
 
   def setup
     Fluent::Test.setup
-    @parser = Fluent::Test::Driver::Parser.new(Fluent::Plugin::CloudFoundryParserSyslog)
+    @parser = Fluent::Test::Driver::Parser.new(Fluent::Plugin::CloudFoundrySyslogParser)
 
     @parser.configure({
       "parse_gorouter_access_log" => true,

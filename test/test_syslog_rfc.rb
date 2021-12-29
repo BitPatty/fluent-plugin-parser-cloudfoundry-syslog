@@ -2,14 +2,14 @@ require "test-unit"
 require "fluent/test"
 require "fluent/test/helpers"
 require "fluent/test/driver/parser"
-require "fluent/plugin/parser_cf_syslog.rb"
+require "fluent/plugin/parser_cloudfoundry_syslog.rb"
 
 class SyslogRFCTest < Test::Unit::TestCase
   include Fluent::Test::Helpers
 
   def setup
     Fluent::Test.setup
-    @parser = Fluent::Test::Driver::Parser.new(Fluent::Plugin::CloudFoundryParserSyslog)
+    @parser = Fluent::Test::Driver::Parser.new(Fluent::Plugin::CloudFoundrySyslogParser)
     @parser.configure({})
   end
 
@@ -40,7 +40,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -60,7 +60,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -75,7 +75,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -90,7 +90,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -105,7 +105,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -141,7 +141,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -164,7 +164,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -184,7 +184,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))
@@ -204,7 +204,7 @@ class SyslogRFCTest < Test::Unit::TestCase
       assert_not_nil(time)
       assert_not_nil(record)
       assert_equal(1, record.dig("header", "pri", "facility"))
-      assert_equal(Fluent::Plugin::CloudFoundryParserSyslog::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
+      assert_equal(Fluent::Plugin::CloudFoundrySyslogParser::SYSLOG_SEVERITY_CODES[5], record.dig("header", "pri", "severity"))
       assert_equal("some-hostname", record.dig("header", "hostname"))
       assert_equal("some-appname", record.dig("header", "app_name"))
       assert_equal("some-procid", record.dig("header", "proc_id"))

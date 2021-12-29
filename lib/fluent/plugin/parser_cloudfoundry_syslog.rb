@@ -3,8 +3,8 @@ require "fluent/time"
 
 module Fluent
   module Plugin
-    class CloudFoundryParserSyslog < Parser
-      Plugin.register_parser("cloudfoundry-syslog", self)
+    class CloudFoundrySyslogParser < Parser
+      Plugin.register_parser("cloudfoundry_syslog", self)
 
       # https://www.iana.org/assignments/enterprise-numbers/enterprise-numbers
       CF_IANA_ENTERPRISE_ID = 47450.freeze
