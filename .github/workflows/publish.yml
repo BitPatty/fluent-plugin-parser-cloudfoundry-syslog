@@ -9,12 +9,13 @@ jobs:
   publish:
     if: github.repository_owner == 'bitpatty'
     runs-on: ubuntu-latest
-    environment: rubygems
+    environment: package-registries
     permissions:
       contents: read
       packages: write
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Publish gem
       uses: dawidd6/action-publish-gem@v1
       with:
