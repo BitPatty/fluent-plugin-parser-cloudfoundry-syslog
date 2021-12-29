@@ -86,18 +86,22 @@ An access log in the format
 
 ## Usage
 
+Install the plugin:
+
+```sh
+# See https://github.com/BitPatty/fluent-plugin-parser-cloudfoundry-syslog/releases for a list of valid versions
+gem install fluent-plugin-parser-cloudfoundry-syslog --version "<desired version>"
+```
+
 Create a logdrain and update your fluent configuration:
 
 ```conf
 <source>
+  # Use TCP or HTTP, depending on what your logdrain is
+  # configured to use
   @type http
 
-  # HTTP Ports are provided by the CF environment
-  port "#{ENV['PORT']}"
-  bind 0.0.0.0
-
-  body_size_limit 32m
-  keepalive_timeout 10s
+  # Your source configuration...
 
   <parse>
     @type cloudfoundry_syslog
