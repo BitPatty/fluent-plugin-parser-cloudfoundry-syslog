@@ -119,7 +119,7 @@ Create a logdrain and update your fluent configuration:
 
 ## Limitations
 
-- Values in `STRUCTURED-DATA`, such as app names, may not contain quotes since they're not being escaped on CloudFoundry's side. See https://github.com/cloudfoundry/loggregator-agent-release/issues/69
+- ~~Values in `STRUCTURED-DATA`, such as app names, may not contain quotes since they're not being escaped on CloudFoundry's side. See https://github.com/cloudfoundry/loggregator-agent-release/issues/69~~ => should be fixed with https://github.com/cloudfoundry/loggregator-agent-release/releases/tag/v6.3.7
 
 ## Credit
 
