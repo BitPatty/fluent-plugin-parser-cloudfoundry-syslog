@@ -1,6 +1,6 @@
 # fluent-plugin-parser-cloudfoundry-syslog
 
-A experimental, work-in-progress [fluentd](https://www.fluentd.org/) parser for CloudFoundry specific syslog drains - basically the opposite end of their [output formatter](https://github.com/cloudfoundry/fluent-plugin-syslog_rfc5424).
+A [fluentd](https://www.fluentd.org/) parser for CloudFoundry specific syslog drains - basically the opposite end of their [output formatter](https://github.com/cloudfoundry/fluent-plugin-syslog_rfc5424).
 
 This plugin should make CF metrics more accessible than the current [syslog parser for fluent](https://docs.fluentd.org/parser/syslog) allows for.
 
